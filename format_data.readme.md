@@ -115,11 +115,11 @@ Usage: format_data.sh [options]
 
 Options: (\* means required parameters)
 
-&emsp;\-i→→→→→Input file.
+&emsp;\-i|Input file.
 
-&emsp;\-o→→→→→Output directory.
+&emsp;\-o|Output directory.
 
-&emsp;\-n→→→→→File header name.
+&emsp;\-n|File header name.
 
 &emsp;\--scriptDir→→Script directory.
 
