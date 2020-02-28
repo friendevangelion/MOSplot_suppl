@@ -115,17 +115,17 @@ Usage: format_data.sh [options]
 
 Options: (\* means required parameters)
 
-&emsp;\-i|Input file.
+&emsp;\-i: Input file.
 
-&emsp;\-o|Output directory.
+&emsp;\-o: Output directory.
 
-&emsp;\-n|File header name.
+&emsp;\-n: File header name.
 
-&emsp;\--scriptDir→→Script directory.
+&emsp;\--scriptDir: Script directory.
 
-&emsp;\--databaseDir→Database directory.
+&emsp;\--databaseDir: Database directory.
 
-&emsp;\--contigName→Contig you want to display with CGView.
+&emsp;\--contigName: Contig you want to display with CGView.
 
 Example: format_data.sh -i
 \`pwd\`/oridata/GCA_000153485.2_ASM15348v2_genomic.fna -o \`pwd\`/output/ -n
@@ -134,34 +134,34 @@ CP003879.1
 
 # Output
 
-\*.RNAmmer.fasta rRNA prediction result (nucleotide sequence) by RNAmmer
+\*.RNAmmer.fasta: rRNA prediction result (nucleotide sequence) by RNAmmer
 
-\*.RNAmmer.gff rRNA prediction result (gff format) by RNAmmer
+\*.RNAmmer.gff: rRNA prediction result (gff format) by RNAmmer
 
-\*.RNAmmer.hmmreport rRNA prediction result (detail report) by RNAmmer
+\*.RNAmmer.hmmreport: rRNA prediction result (detail report) by RNAmmer
 
-\*.prodigal.gff3 coding-gene prediction result (gff format) by Prodigal
+\*.prodigal.gff3: coding-gene prediction result (gff format) by Prodigal
 
-\*.prodigal.pep coding-gene prediction result (amino acid sequence) by Prodigal
+\*.prodigal.pep: coding-gene prediction result (amino acid sequence) by Prodigal
 
-\*.tRNAscan.summary tRNA prediction result (report) by tRNAscan-SE
+\*.tRNAscan.summary: tRNA prediction result (report) by tRNAscan-SE
 
-\*.tRNAscan.tblout tRNA prediction result (tab-separated-values format) by
+\*.tRNAscan.tblout: tRNA prediction result (tab-separated-values format) by
 tRNAscan-SE
 
-\*.rfam.tblout Rfam database annotation result (tab-separated-values format) by
+\*.rfam.tblout: Rfam database annotation result (tab-separated-values format) by
 Infernal
 
-\*.diamond.tblout COG database annotation result (tab-separated-values format)
+\*.diamond.tblout: COG database annotation result (tab-separated-values format)
 by diamond
 
-\*.genomeGC.tab GC-content and GC-skew of all the slide windows of all sequences
+\*.genomeGC.tab: GC-content and GC-skew of all the slide windows of all sequences
 in your input file
 
-\*.genomeLength.tab genome length of all sequences in your input file
+\*.genomeLength.tab: genome length of all sequences in your input file
 
-\*.codingGene.tab coding gene summary of all sequences in your input file
+\*.codingGene.tab: coding gene summary of all sequences in your input file
 
-\*.noncodingGene.tab non-coding gene summary of all sequences in your input file
+\*.noncodingGene.tab: non-coding gene summary of all sequences in your input file
 
-\*.CGView.xml xml file as the input of CGView
+\*.CGView.xml: xml file as the input of CGView
