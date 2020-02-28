@@ -115,17 +115,17 @@ Usage: format_data.sh [options]
 
 Options: (\* means required parameters)
 
-\-i              Input file.
+&emsp;\-i &emsp;&emsp;&emsp;Input file.
 
-\-o              Output directory.
+&emsp;\-o &emsp;&emsp;&emsp;Output directory.
 
-\-n              File header name.
+&emsp;\-n &emsp;&emsp;&emsp;File header name.
 
-\--scriptDir     Script directory.
+&emsp;\--scriptDir &emsp;&emsp;Script directory.
 
-\--databaseDir   Database directory.
+&emsp;\--databaseDir &emsp;Database directory.
 
-\--contigName Contig you want to display with CGView.
+&emsp;\--contigName Contig you want to display with CGView.
 
 Example: format_data.sh -i
 \`pwd\`/oridata/GCA_000153485.2_ASM15348v2_genomic.fna -o \`pwd\`/output/ -n
