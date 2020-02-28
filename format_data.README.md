@@ -37,72 +37,41 @@ Infernal (https://github.com/EddyRivasLab/infernal)
 To download and format COG database, you can perform the following steps at the
 shell prompt:
 
-\# set database directory \$db_dir, eg: db_dir=\`pwd\`/db
-
-\# copy all perl/shell script to script directory \$script_dir, eg:
-script_dir=\`pwd\`/script
-
-if [ ! -d \${db_dir} ]; then mkdir \${db_dir}; fi
-
-if [ ! -d \${db_dir}/COG ]; then mkdir \${db_dir}/COG; fi
-
-cd \${db_dir}/COG
-
-if [ ! -f \${db_dir}/COG/COGid2COGclass.tsv ]; then
-
-if [ ! -f \${db_dir}/COG/listCOGs.html ]; then wget
-https://ftp.ncbi.nih.gov/pub/COG/COG2014/static/lists/listCOGs.html; fi
-
-perl \${script_dir}/COGid2COGclass.pl \> COGid2COGclass.tsv
-
+```
+# set database directory $db_dir, eg: db_dir=`pwd`/db
+# copy all perl/shell script to script directory $script_dir, eg: script_dir=`pwd`/script
+if [ ! -d ${db_dir} ]; then mkdir ${db_dir}; fi
+if [ ! -d ${db_dir}/COG ]; then mkdir ${db_dir}/COG; fi
+cd ${db_dir}/COG
+if [ ! -f ${db_dir}/COG/COGid2COGclass.tsv ]; then
+	if [ ! -f ${db_dir}/COG/listCOGs.html ]; then wget https://ftp.ncbi.nih.gov/pub/COG/COG2014/static/lists/listCOGs.html; fi
+	perl ${script_dir}/COGid2COGclass.pl > COGid2COGclass.tsv
 fi
-
-if [ ! -f \${db_dir}/COG/prot2003-2014.fa ]; then
-
-if [ ! -f \${db_dir}/COG/prot2003-2014.fa.gz ]; then wget
-https://ftp.ncbi.nih.gov/pub/COG/COG2014/data/prot2003-2014.fa.gz; fi
-
-gunzip prot2003-2014.fa.gz
-
+if [ ! -f ${db_dir}/COG/prot2003-2014.fa ]; then
+	if [ ! -f ${db_dir}/COG/prot2003-2014.fa.gz ]; then wget https://ftp.ncbi.nih.gov/pub/COG/COG2014/data/prot2003-2014.fa.gz; fi
+	gunzip prot2003-2014.fa.gz
 fi
-
-if [ ! -f \${db_dir}/COG/cog2003-2014.csv ]; then wget
-https://ftp.ncbi.nih.gov/pub/COG/COG2014/data/cog2003-2014.csv; fi
-
-if [ ! -f \${db_dir}/COG/prot2003-2014.dmnd ]; then diamond makedb --in
-prot2003-2014.fa -d prot2003-2014; fi
+if [ ! -f ${db_dir}/COG/cog2003-2014.csv ]; then wget https://ftp.ncbi.nih.gov/pub/COG/COG2014/data/cog2003-2014.csv; fi
+if [ ! -f ${db_dir}/COG/prot2003-2014.dmnd ]; then diamond makedb --in prot2003-2014.fa -d prot2003-2014; fi
+```
 
 To download and format Rfam database, you can perform the following steps at the
 shell prompt:
 
-\# set database directory \$db_dir, eg: db_dir=\`pwd\`/db
-
-\# copy all perl/shell script to script directory \$script_dir, eg:
-script_dir=\`pwd\`/script
-
-if [ ! -d \${db_dir} ]; then mkdir \${db_dir}; fi
-
-if [ ! -d \${db_dir}/Rfam ]; then mkdir \${db_dir}/Rfam; fi
-
-cd \${db_dir}/Rfam
-
-if [ ! -f \${db_dir}/Rfam/Rfam.cm ]; then
-
-if [ ! -f \${db_dir}/Rfam/Rfam.cm.gz ]; then wget
-ftp://ftp.ebi.ac.uk/pub/databases/Rfam/14.0/Rfam.cm.gz; fi
-
-gunzip Rfam.cm.gz
-
+```
+# set database directory $db_dir, eg: db_dir=`pwd`/db
+# copy all perl/shell script to script directory $script_dir, eg: script_dir=`pwd`/script
+if [ ! -d ${db_dir} ]; then mkdir ${db_dir}; fi
+if [ ! -d ${db_dir}/Rfam ]; then mkdir ${db_dir}/Rfam; fi
+cd ${db_dir}/Rfam
+if [ ! -f ${db_dir}/Rfam/Rfam.cm ]; then
+	if [ ! -f ${db_dir}/Rfam/Rfam.cm.gz ]; then wget ftp://ftp.ebi.ac.uk/pub/databases/Rfam/14.0/Rfam.cm.gz; fi
+	gunzip Rfam.cm.gz
 fi
-
-if [ ! -f \${db_dir}/Rfam/Rfam.clanin ]; then wget
-ftp://ftp.ebi.ac.uk/pub/databases/Rfam/14.0/Rfam.clanin; fi
-
-cat \${script_dir}/rfam_entry.tsv \| awk 'BEGIN
-{FS=OFS="\\t"}{split(\$3,x,";");class=x[2];print \$1,\$2,\$3,class}' \>
-rfamid2class.tsv
-
+if [ ! -f ${db_dir}/Rfam/Rfam.clanin ]; then wget ftp://ftp.ebi.ac.uk/pub/databases/Rfam/14.0/Rfam.clanin; fi
+cat ${script_dir}/rfam_entry.tsv | awk 'BEGIN {FS=OFS="\t"}{split($3,x,";");class=x[2];print $1,$2,$3,class}' > rfamid2class.tsv
 cmpress Rfam.cm
+```
 
 **NOTE:** File 'rfam_entry.tsv' is obtained from website rfam.xfam.org. Select
 all the entry in http://rfam.xfam.org/search#tabview=tab5 and submit your
