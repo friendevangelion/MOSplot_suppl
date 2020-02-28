@@ -105,7 +105,7 @@ rfamid2class.tsv
 cmpress Rfam.cm
 
 **NOTE:** File 'rfam_entry.tsv' is obtained from website rfam.xfam.org. Select
-all the entry in http://rfam.xfam.org/search\#tabview=tab5 and submit your
+all the entry in http://rfam.xfam.org/search#tabview=tab5 and submit your
 query. Download all the **UNFORMATTED LIST** (on the bottom of the result page)
 as file 'rfam_entry.tsv'.
 
@@ -115,15 +115,15 @@ Usage: format_data.sh [options]
 
 Options: (\* means required parameters)
 
-\-i Input file.
+\-i              Input file.
 
-\-o Output directory.
+\-o              Output directory.
 
-\-n File header name.
+\-n              File header name.
 
-\--scriptDir Script directory.
+\--scriptDir     Script directory.
 
-\--databaseDir Database directory.
+\--databaseDir   Database directory.
 
 \--contigName Contig you want to display with CGView.
 
