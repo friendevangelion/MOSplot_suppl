@@ -32,4 +32,4 @@ cmscan -Z $num --cut_ga --cpu ${threads} --rfam --nohmmonly --tblout ${outputDir
 
 perl ${scriptDir}/1.count_genome_GC.pl -i ${inputFile} -o ${outputDir}${name} -w ${windowSize} -s ${stepSize}
 perl ${scriptDir}/2.annotation_formatting.pl -o ${outputDir}${name} -prodigalFile ${outputDir}/${name}.prodigal.pep -rnammerFile ${outputDir}/${name}.RNAmmer.gff -trnascanFile ${outputDir}/${name}.tRNAscan.tblout -rfamFile ${outputDir}/${name}.rfam.tblout -rfamRf ${databaseDir}/Rfam/rfamid2class.tsv -cogPep ${databaseDir}/COG/prot2003-2014.fa -cogPepID2CogID ${databaseDir}/COG/cog2003-2014.csv -cogCogID2ClassID ${databaseDir}/COG/COGid2COGclass.tsv -cogFile ${outputDir}/${name}.diamond.tblout
-perl ${scriptDir}/3.createCGViewXml.pl -i ${outputDir}${name} -o ${outputDir}/CGView.xml -CGViewFile ${databaseDir}/CGView.config -COGColorFile ${databaseDir}/COG.color.config -contigName ${contigName}
+perl ${scriptDir}/3.createCGViewXml.pl -i ${outputDir}${name} -o ${outputDir}/${name}.CGView.xml -CGViewFile ${scriptDir}/CGView.config -COGColorFile ${scriptDir}/COG.color.config -contigName ${contigName}
