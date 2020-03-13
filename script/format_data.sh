@@ -11,7 +11,6 @@ while true; do
 done
 
 if [ -n $name ]; then name=default; fi
-if [ -n $inputFile ]; then ; fi
 
 windowSize=1000
 stepSize=200
